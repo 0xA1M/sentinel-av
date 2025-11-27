@@ -1,48 +1,73 @@
-# Sentinel-AV Web UI
+# Welcome to your Lovable project
 
-This is the web-based user interface for Sentinel-AV, a modern, self-hosted antivirus and lightweight EDR platform. The Web UI provides an authenticated interface for managing agents, signatures, scans, and security events across your infrastructure.
+## Project info
 
-## Overview
+**URL**: https://lovable.dev/projects/91d69a8f-47aa-40a4-b2d1-58305670cd6d
 
-The Sentinel-AV Web UI is built with [Next.js](https://nextjs.org) and serves as the central dashboard for:
+## How can I edit this code?
 
-- Managing agent fleet (Linux, Windows, macOS)
-- Controlling signature distribution and updates
-- Monitoring real-time security events
-- Managing quarantine and threat response
-- Viewing scan history and system statistics
+There are several ways of editing your application.
 
-## Getting Started
+**Use Lovable**
 
-First, ensure the Sentinel-AV server backend is running, then start the development server:
+Simply visit the [Lovable Project](https://lovable.dev/projects/91d69a8f-47aa-40a4-b2d1-58305670cd6d) and start prompting.
 
-```bash
+Changes made via Lovable will be committed automatically to this repo.
+
+**Use your preferred IDE**
+
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+Follow these steps:
+
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
+
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
+
+# Step 3: Install the necessary dependencies.
+npm i
+
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to access the dashboard.
+**Edit a file directly in GitHub**
 
-The Web UI connects to the Sentinel-AV server backend to provide real-time monitoring and management capabilities.
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-## Features
+**Use GitHub Codespaces**
 
-- **Agent Management**: View and control deployed agents across your infrastructure
-- **Signature Management**: Upload, version, and distribute YARA and hash signatures
-- **Real-time Monitoring**: Live logs and scan queue visualization
-- **Threat Response**: Quarantine management and threat remediation
-- **Dashboard**: System status, statistics, and event history
-- **Secure Authentication**: Role-based access control for system administration
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## Learn More
+## What technologies are used for this project?
 
-To learn more about the Sentinel-AV project and its architecture, see the main [README](../../README.md) in the project root.
+This project is built with:
 
-## Deployment
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-The Web UI is typically deployed as part of the complete Sentinel-AV server component. See the project's main documentation for deployment instructions.
+## How can I deploy this project?
+
+Simply open [Lovable](https://lovable.dev/projects/91d69a8f-47aa-40a4-b2d1-58305670cd6d) and click on Share -> Publish.
+
+## Can I connect a custom domain to my Lovable project?
+
+Yes, you can!
+
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
