@@ -10,7 +10,7 @@ import (
 	"gorm.io/gorm"
 )
 
-// StringArray is a custom type to handle string arrays in PostgreSQL
+// StringArray is a custom type to handle string arrays (compatible with SQLite and PostgreSQL)
 type StringArray []string
 
 // Scan implements the Scanner interface for StringArray
@@ -68,7 +68,7 @@ type ScanResult struct {
 	AgentID    uint           `json:"agent_id" gorm:"index;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	Agent      Agent          `json:"agent" gorm:"foreignKey:AgentID;constraint:OnUpdate:CASCADE,OnDelete:SET NULL;"`
 	ScanType   string         `json:"scan_type"` // full, quick, custom, real-time
-	FilePaths  StringArray    `json:"file_paths" gorm:"type:jsonb"`
+	FilePaths  StringArray    `json:"file_paths" gorm:"type:text"` // Using text for SQLite compatibility
 	Threats    []Threat       `json:"threats" gorm:"-"` // threats detected (not stored in DB directly)
 	ScanTime   time.Time      `json:"scan_time"`
 	Duration   int64          `json:"duration"` // in milliseconds

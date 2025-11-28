@@ -6,7 +6,7 @@ import (
 
 	"github.com/0xA1M/sentinel-server/internal/api/utils"
 	"github.com/0xA1M/sentinel-server/internal/db/migrations"
-	"gorm.io/driver/postgres"
+	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
@@ -15,17 +15,10 @@ var DB *gorm.DB
 
 // Connect initializes the database connection
 func Connect() (*gorm.DB, error) {
-	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=%s TimeZone=%s",
-		getEnv("DB_HOST", "localhost"),
-		getEnv("DB_USER", "sentinel"),
-		getEnv("DB_PASSWORD", "sentinel"),
-		getEnv("DB_NAME", "sentinel_av"),
-		getEnv("DB_PORT", "5432"),
-		getEnv("DB_SSLMODE", "disable"),
-		getEnv("DB_TIMEZONE", "UTC"),
-	)
+	// Use SQLite database file
+	dbPath := getEnv("DB_PATH", "./sentinel.db")
 
-	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
+	db, err := gorm.Open(sqlite.Open(dbPath), &gorm.Config{
 		Logger: utils.GetGormLogger(),
 	})
 	if err != nil {
